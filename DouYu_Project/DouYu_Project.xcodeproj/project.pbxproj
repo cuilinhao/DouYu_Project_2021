@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45FACE6B392F23D4FA7C6E6E /* Pods_DouYu_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBA2131466BB2925F923022 /* Pods_DouYu_Project.framework */; };
 		7092BBEE2734179500FA84BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092BBED2734179500FA84BC /* AppDelegate.swift */; };
 		7092BBF02734179500FA84BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092BBEF2734179500FA84BC /* SceneDelegate.swift */; };
 		7092BBF22734179500FA84BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092BBF12734179500FA84BC /* ViewController.swift */; };
@@ -24,6 +25,9 @@
 		7092BBF62734179800FA84BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7092BBF92734179800FA84BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7092BBFB2734179800FA84BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73176C8A922BAB1311E74978 /* Pods-DouYu_Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYu_Project.debug.xcconfig"; path = "Target Support Files/Pods-DouYu_Project/Pods-DouYu_Project.debug.xcconfig"; sourceTree = "<group>"; };
+		AF4878BA0B05ECD6F4338FEC /* Pods-DouYu_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYu_Project.release.xcconfig"; path = "Target Support Files/Pods-DouYu_Project/Pods-DouYu_Project.release.xcconfig"; sourceTree = "<group>"; };
+		EBBA2131466BB2925F923022 /* Pods_DouYu_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouYu_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45FACE6B392F23D4FA7C6E6E /* Pods_DouYu_Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		491738CE736FE87FECA4A83A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				73176C8A922BAB1311E74978 /* Pods-DouYu_Project.debug.xcconfig */,
+				AF4878BA0B05ECD6F4338FEC /* Pods-DouYu_Project.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7092BBE12734179400FA84BC = {
 			isa = PBXGroup;
 			children = (
 				7092BBEC2734179500FA84BC /* DouYu_Project */,
 				7092BBEB2734179500FA84BC /* Products */,
+				491738CE736FE87FECA4A83A /* Pods */,
+				996FB3D32D55405E8FCC8376 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = DouYu_Project;
 			sourceTree = "<group>";
 		};
+		996FB3D32D55405E8FCC8376 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBBA2131466BB2925F923022 /* Pods_DouYu_Project.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7092BBFE2734179800FA84BC /* Build configuration list for PBXNativeTarget "DouYu_Project" */;
 			buildPhases = (
+				1FA579326235E5A1D4724A47 /* [CP] Check Pods Manifest.lock */,
 				7092BBE62734179500FA84BC /* Sources */,
 				7092BBE72734179500FA84BC /* Frameworks */,
 				7092BBE82734179500FA84BC /* Resources */,
+				FEA7F6BF45D1B6AD472B1674 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FA579326235E5A1D4724A47 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DouYu_Project-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEA7F6BF45D1B6AD472B1674 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DouYu_Project/Pods-DouYu_Project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DouYu_Project/Pods-DouYu_Project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DouYu_Project/Pods-DouYu_Project-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7092BBE62734179500FA84BC /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		7092BBFF2734179800FA84BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73176C8A922BAB1311E74978 /* Pods-DouYu_Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +382,7 @@
 		};
 		7092BC002734179800FA84BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF4878BA0B05ECD6F4338FEC /* Pods-DouYu_Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -8,6 +8,7 @@
 import UIKit
 
 private let kTitleViewH : CGFloat = 40
+
 class HomeViewController: UIViewController {
 	
 	fileprivate lazy var pageTitleView: PageTitleView = { [weak self] in
@@ -20,6 +21,25 @@ class HomeViewController: UIViewController {
 		titleView.delegate = self
 		
 		return titleView
+	}()
+	
+	lazy var pageContentView: PageContentView = {
+		
+		let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH - kTabbarH
+		let contentFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH - 44, width: kScreenW, height: contentH)
+		
+		var childVcs = [UIViewController]()
+		childVcs.append(RecommendViewController())
+		childVcs.append(GameViewController())
+		childVcs.append(AmuseViewController())
+		childVcs.append(FunnyViewController())
+		
+		
+		let contentView = PageContentView(frame: contentFrame, childVcs: childVcs, parentViewController: self)
+		
+		contentView.delegate = self
+		
+		return contentView
 	}()
 
     override func viewDidLoad() {
@@ -41,6 +61,7 @@ extension HomeViewController {
 		configureNavigaiton()
 		
 		view.addSubview(pageTitleView)
+		view.addSubview(pageContentView)
 		
 	}
 }
@@ -74,6 +95,17 @@ extension HomeViewController: PageTitleViewDelegate {
 	func pagetitleView(_ titleView: PageTitleView, selectedIndex index: Int) {
 		
 		print("___pagetitle Delegate")
+		pageContentView.setCurrentIndex(index)
+		
+	}
+}
+
+extension HomeViewController: PageContentViewDelegate {
+	func pageContent(_ contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+		
+		print("___pageContent Delegate")
+		
+		pageTitleView.setTitleWithProgress(progress, sourceIndex: sourceIndex, targeIndex: targetIndex)
 	}
 }
 

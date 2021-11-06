@@ -17,21 +17,27 @@ class HomeViewController: UIViewController {
         
         self.tabBarItem.title = "主页"
         
-        arc4random()
-        
-//        UIView.animate(withDuration: 0.5, delay: 0, options: nibName) {
-//
-//        } completion: {
-//
-//        }
 
+		self.navigationController?.navigationBar.barTintColor =
+
+			UIColor(red: 55/255, green: 186/255, blue: 89/255, alpha: 1)
+		
+
+		//修改导航栏文字颜色
+
+		//self.navigationController?.navigationBar.titleTextAttributes =
+
+			//[NSForegroundColorAttributeName: UIColor.white]
+		
+		self.navigationController?.navigationBar.setBackgroundImage(UIColor.systemGray.toImage(), for: .default)
+		
+		
     }
     
-
-    /** zhushi
-     
-     
-     */
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		let vc = DetailViewController()
+		self.navigationController?.pushViewController(vc, animated: true)
+	}
     
     
 

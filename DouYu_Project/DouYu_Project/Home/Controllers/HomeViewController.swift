@@ -7,36 +7,45 @@
 
 import UIKit
 
+private let kTitleViewH : CGFloat = 40
 class HomeViewController: UIViewController {
+	
+	fileprivate lazy var pageTitleView: PageTitleView = {
+		
+		let titles = ["推荐", "游戏","娱乐", "去玩","魔兽","三元","chinaJoy","西游记"]
+		let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH - 44, width: kScreenH, height:40)
+		let titleView = PageTitleView(frame: titleFrame, titles: titles)
+		
+		//codeTest
+		//titleView.backgroundColor = .systemRed
+		
+		return titleView
+	}()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-	
         view.backgroundColor = .white
-        self.tabBarItem.title = "主页"
-		self.navigationController?.navigationBar.barTintColor =
-			UIColor(red: 55/255, green: 186/255, blue: 89/255, alpha: 1)
-		//修改导航栏文字颜色
-		//self.navigationController?.navigationBar.titleTextAttributes =
-			//[NSForegroundColorAttributeName: UIColor.white]
-		self.navigationController?.navigationBar.setBackgroundImage(UIColor.systemGray.toImage(), for: .default)
-		
-		self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 200)
-		
-		configureNavigaiton()
+        
+		initUI()
     }
     
-	
-	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-		let vc = DetailViewController()
-		self.navigationController?.pushViewController(vc, animated: true)
-	}
     
 }
 
 
 //MARK:- initUI
+extension HomeViewController {
+	
+	func initUI() {
+		
+		configureNavigaiton()
+		
+		view.addSubview(pageTitleView)
+		
+	}
+}
+
 extension HomeViewController {
 	
 	func configureNavigaiton()  {
@@ -51,6 +60,27 @@ extension HomeViewController {
 		let qrcodeItem = UIBarButtonItem(imageName: "Image_scan", highImageName: "Image_scan_click", size: size)
 		
 		navigationItem.rightBarButtonItems = [historyItem, searchItem, qrcodeItem]
+		
+		//有作用
+		navigationController?.navigationBar.backgroundColor = UIColor.lightGray
+		//navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 200)
+		//self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 200)
+		
+	}
+	
+}
+
+
+//MARK:- Action
+extension HomeViewController {
+	
+	func test()  {
+		
+	}
+	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		let vc = DetailViewController()
+		self.navigationController?.pushViewController(vc, animated: true)
 	}
 	
 }

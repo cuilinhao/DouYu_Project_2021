@@ -12,6 +12,7 @@
 		7033CD2027361B5700A2FD21 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033CD1F27361B5700A2FD21 /* UIColor-Extension.swift */; };
 		7033CD2227363AA900A2FD21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033CD2127363AA900A2FD21 /* DetailViewController.swift */; };
 		7033CD242736428100A2FD21 /* UIBarButtonItem_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033CD232736428100A2FD21 /* UIBarButtonItem_Extension.swift */; };
+		7033CD262736486100A2FD21 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033CD252736486100A2FD21 /* PageTitleView.swift */; };
 		7092BBEE2734179500FA84BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092BBED2734179500FA84BC /* AppDelegate.swift */; };
 		7092BBF02734179500FA84BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092BBEF2734179500FA84BC /* SceneDelegate.swift */; };
 		7092BBF22734179500FA84BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092BBF12734179500FA84BC /* ViewController.swift */; };
@@ -23,7 +24,6 @@
 		B89BA5ED2735147400EDADEF /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89BA5EC2735147400EDADEF /* LiveViewController.swift */; };
 		B89BA5EF273514A900EDADEF /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89BA5EE273514A900EDADEF /* FollowViewController.swift */; };
 		B89BA5F42735185300EDADEF /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89BA5F32735185300EDADEF /* Common.swift */; };
-		B89BA5F62735194900EDADEF /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89BA5F52735194900EDADEF /* PageTitleView.swift */; };
 		B89BA5F827351E5200EDADEF /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89BA5F727351E5200EDADEF /* PageContentView.swift */; };
 		B89BA5FA27351F5F00EDADEF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89BA5F927351F5F00EDADEF /* UIColorExtension.swift */; };
 		B89BA5FC27352BCD00EDADEF /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89BA5FB27352BCD00EDADEF /* RecommendViewController.swift */; };
@@ -34,6 +34,7 @@
 		7033CD1F27361B5700A2FD21 /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		7033CD2127363AA900A2FD21 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7033CD232736428100A2FD21 /* UIBarButtonItem_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem_Extension.swift; sourceTree = "<group>"; };
+		7033CD252736486100A2FD21 /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		7092BBEA2734179500FA84BC /* DouYu_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYu_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7092BBED2734179500FA84BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7092BBEF2734179500FA84BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		B89BA5EC2735147400EDADEF /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		B89BA5EE273514A900EDADEF /* FollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		B89BA5F32735185300EDADEF /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		B89BA5F52735194900EDADEF /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		B89BA5F727351E5200EDADEF /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		B89BA5F927351F5F00EDADEF /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		B89BA5FB27352BCD00EDADEF /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +174,6 @@
 		B81EACA327351241000E57A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B89BA5F52735194900EDADEF /* PageTitleView.swift */,
 				B89BA5F727351E5200EDADEF /* PageContentView.swift */,
 			);
 			path = View;
@@ -242,6 +241,7 @@
 		B81EACAB27351241000E57A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7033CD252736486100A2FD21 /* PageTitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -384,6 +384,7 @@
 			files = (
 				B89BA5F42735185300EDADEF /* Common.swift in Sources */,
 				7092BBF22734179500FA84BC /* ViewController.swift in Sources */,
+				7033CD262736486100A2FD21 /* PageTitleView.swift in Sources */,
 				7092BBEE2734179500FA84BC /* AppDelegate.swift in Sources */,
 				B89BA5F827351E5200EDADEF /* PageContentView.swift in Sources */,
 				7033CD242736428100A2FD21 /* UIBarButtonItem_Extension.swift in Sources */,
@@ -392,7 +393,6 @@
 				B89BA5FC27352BCD00EDADEF /* RecommendViewController.swift in Sources */,
 				B81EACB1273512C2000E57A7 /* HomeViewController.swift in Sources */,
 				B89BA5ED2735147400EDADEF /* LiveViewController.swift in Sources */,
-				B89BA5F62735194900EDADEF /* PageTitleView.swift in Sources */,
 				B89BA5FA27351F5F00EDADEF /* UIColorExtension.swift in Sources */,
 				B81EACB3273512EC000E57A7 /* MainViewController.swift in Sources */,
 				7033CD2227363AA900A2FD21 /* DetailViewController.swift in Sources */,

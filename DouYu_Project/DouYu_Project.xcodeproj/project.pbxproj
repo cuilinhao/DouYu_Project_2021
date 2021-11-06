@@ -13,6 +13,7 @@
 		7033CD2227363AA900A2FD21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033CD2127363AA900A2FD21 /* DetailViewController.swift */; };
 		7033CD242736428100A2FD21 /* UIBarButtonItem_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033CD232736428100A2FD21 /* UIBarButtonItem_Extension.swift */; };
 		7033CD262736486100A2FD21 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033CD252736486100A2FD21 /* PageTitleView.swift */; };
+		7033CD282736966500A2FD21 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7033CD272736966500A2FD21 /* PageContentView.swift */; };
 		7092BBEE2734179500FA84BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092BBED2734179500FA84BC /* AppDelegate.swift */; };
 		7092BBF02734179500FA84BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092BBEF2734179500FA84BC /* SceneDelegate.swift */; };
 		7092BBF22734179500FA84BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092BBF12734179500FA84BC /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		7033CD2127363AA900A2FD21 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7033CD232736428100A2FD21 /* UIBarButtonItem_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem_Extension.swift; sourceTree = "<group>"; };
 		7033CD252736486100A2FD21 /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
+		7033CD272736966500A2FD21 /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		7092BBEA2734179500FA84BC /* DouYu_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYu_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7092BBED2734179500FA84BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7092BBEF2734179500FA84BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				7033CD252736486100A2FD21 /* PageTitleView.swift */,
+				7033CD272736966500A2FD21 /* PageContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				7033CD262736486100A2FD21 /* PageTitleView.swift in Sources */,
 				7092BBEE2734179500FA84BC /* AppDelegate.swift in Sources */,
 				B89BA5F827351E5200EDADEF /* PageContentView.swift in Sources */,
+				7033CD282736966500A2FD21 /* PageContentView.swift in Sources */,
 				7033CD242736428100A2FD21 /* UIBarButtonItem_Extension.swift in Sources */,
 				7092BBF02734179500FA84BC /* SceneDelegate.swift in Sources */,
 				7033CD2027361B5700A2FD21 /* UIColor-Extension.swift in Sources */,

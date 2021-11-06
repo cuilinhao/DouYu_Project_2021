@@ -45,7 +45,7 @@ class CustomNavigationController: UINavigationController {
 		for i in 0..<count {
 			let ivar = ivars[Int(i)]
 			let name = ivar_getName(ivar)
-			print(String(cString: name!) + "+++++")
+			//print(String(cString: name!) + "+++++")
 		}
 		
 		let targets = systemGes.value(forKey: "_targets") as? [NSObject]

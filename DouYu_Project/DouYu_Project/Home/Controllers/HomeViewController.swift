@@ -10,14 +10,14 @@ import UIKit
 private let kTitleViewH : CGFloat = 40
 class HomeViewController: UIViewController {
 	
-	fileprivate lazy var pageTitleView: PageTitleView = {
+	fileprivate lazy var pageTitleView: PageTitleView = { [weak self] in
 		
 		let titles = ["推荐", "游戏","娱乐", "去玩","魔兽","三元","chinaJoy","西游记"]
 		let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH - 44, width: kScreenH, height:40)
 		let titleView = PageTitleView(frame: titleFrame, titles: titles)
 		
-		//codeTest
-		//titleView.backgroundColor = .systemRed
+		//设置代理
+		titleView.delegate = self
 		
 		return titleView
 	}()
@@ -29,7 +29,6 @@ class HomeViewController: UIViewController {
         
 		initUI()
     }
-    
     
 }
 
@@ -70,6 +69,13 @@ extension HomeViewController {
 	
 }
 
+extension HomeViewController: PageTitleViewDelegate {
+	
+	func pagetitleView(_ titleView: PageTitleView, selectedIndex index: Int) {
+		
+		print("___pagetitle Delegate")
+	}
+}
 
 //MARK:- Action
 extension HomeViewController {

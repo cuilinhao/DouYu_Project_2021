@@ -11,6 +11,8 @@ target 'DouYu_Project' do
   pod "SnapKit"
   pod "R.swift"
 pod 'Alamofire'
+#pod 'Alamofire', '~> 5.0'
+
 pod 'HandyJSON'
 pod 'SwiftyJSON'
 

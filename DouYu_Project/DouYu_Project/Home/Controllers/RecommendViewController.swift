@@ -23,6 +23,7 @@ private let kPerttyItemH = kNormalItemW * 4 / 3
 
 class RecommendViewController: UIViewController {
 
+	lazy var recommedViewModel = RecommendViewModel()
 	
 	lazy var collectionView: UICollectionView = {
 		
@@ -58,6 +59,10 @@ class RecommendViewController: UIViewController {
         super.viewDidLoad()
         
 		view.addSubview(collectionView)
+		
+		recommedViewModel.requestData {
+			print("++++++")
+		}
 		
     }
 	

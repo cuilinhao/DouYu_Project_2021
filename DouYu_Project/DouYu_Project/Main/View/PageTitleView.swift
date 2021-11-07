@@ -46,12 +46,12 @@ class PageTitleView: UIView {
 		
 		let scrolleView = UIScrollView()
 		scrolleView.showsHorizontalScrollIndicator = false
+		//点击状态栏，回到顶部
 		scrolleView.scrollsToTop = false
-		//设置边界
+		//设置边界 不超过内容的范围
 		scrolleView.bounces = false
 		
 //		scrolleView.contentSize = CGSize(width: 1000, height: 88)
-		
 //		scrolleView.contentSize = CGSize(width: titles.count * 100, height: frame.height)
 		
 		

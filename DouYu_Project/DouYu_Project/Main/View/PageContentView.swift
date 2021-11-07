@@ -88,16 +88,28 @@ extension PageContentView:UICollectionViewDataSource {
 		return childVcs.count
 	}
 	
-	
+	/** 注释
+	 
+	 判断视图是什么类型
+	 if NSStringFromClass(view.classForCoder) == "UIView" {
+		 print("是gameView")
+	 }
+	 
+	 */
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		
 		//设置cell
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: contentCellID, for: indexPath)
 		
 		//给cell 设置内容
-		#warning("+++>>>要移除>>>>")
+		//#warning("+++>>>要移除>>>>")
+		//MARK:-移除的是childVcs的view
 		for view in cell.contentView.subviews {
+			
+			print("___cell上要移除的view：\(view)")
+			//print("__\(view.ty)")
 			view.removeFromSuperview()
+			//view.backgroundColor = .systemPink
 		}
 		
 		let childVc = childVcs[indexPath.item]

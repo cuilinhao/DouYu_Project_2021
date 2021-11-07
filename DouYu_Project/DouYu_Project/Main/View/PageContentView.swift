@@ -117,10 +117,7 @@ extension PageContentView:UICollectionViewDataSource {
 		childVc.view.frame = cell.contentView.bounds
 		cell.contentView.addSubview(childVc.view)
 		
-		cell.contentView.backgroundColor = .systemPurple
-		if indexPath.item % 2 == 0 {
-			cell.contentView.backgroundColor = .systemGreen
-		}
+		cell.contentView.backgroundColor = .white
 		
 		return cell
 	}

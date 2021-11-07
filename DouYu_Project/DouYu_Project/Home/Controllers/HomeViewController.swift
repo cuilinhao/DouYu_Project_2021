@@ -47,6 +47,8 @@ class HomeViewController: UIViewController {
 
         view.backgroundColor = .white
         
+		self.title = "主页"
+		
 		initUI()
     }
     

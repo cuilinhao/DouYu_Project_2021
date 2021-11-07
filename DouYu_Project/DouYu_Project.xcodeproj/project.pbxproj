@@ -20,6 +20,9 @@
 		7063AA742737BE1A0038D3D8 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7063AA732737BE190038D3D8 /* CollectionHeaderView.swift */; };
 		7063AA762737BE410038D3D8 /* CollectionNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7063AA752737BE410038D3D8 /* CollectionNormalCell.swift */; };
 		7063AA782737BE520038D3D8 /* CollectionPrettyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7063AA772737BE520038D3D8 /* CollectionPrettyCell.swift */; };
+		7063AA7A2737F4D30038D3D8 /* BaseGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7063AA792737F4D30038D3D8 /* BaseGameViewModel.swift */; };
+		7063AA7C2737F4E30038D3D8 /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7063AA7B2737F4E30038D3D8 /* AnchorModel.swift */; };
+		7063AA7E2737F4F00038D3D8 /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7063AA7D2737F4F00038D3D8 /* AnchorGroup.swift */; };
 		7092BBEE2734179500FA84BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092BBED2734179500FA84BC /* AppDelegate.swift */; };
 		7092BBF02734179500FA84BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092BBEF2734179500FA84BC /* SceneDelegate.swift */; };
 		7092BBF22734179500FA84BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7092BBF12734179500FA84BC /* ViewController.swift */; };
@@ -48,6 +51,9 @@
 		7063AA732737BE190038D3D8 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		7063AA752737BE410038D3D8 /* CollectionNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionNormalCell.swift; sourceTree = "<group>"; };
 		7063AA772737BE520038D3D8 /* CollectionPrettyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPrettyCell.swift; sourceTree = "<group>"; };
+		7063AA792737F4D30038D3D8 /* BaseGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGameViewModel.swift; sourceTree = "<group>"; };
+		7063AA7B2737F4E30038D3D8 /* AnchorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
+		7063AA7D2737F4F00038D3D8 /* AnchorGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
 		7092BBEA2734179500FA84BC /* DouYu_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYu_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7092BBED2734179500FA84BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7092BBEF2734179500FA84BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -265,6 +271,9 @@
 		B81EACAA27351241000E57A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7063AA792737F4D30038D3D8 /* BaseGameViewModel.swift */,
+				7063AA7B2737F4E30038D3D8 /* AnchorModel.swift */,
+				7063AA7D2737F4F00038D3D8 /* AnchorGroup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -422,6 +431,8 @@
 				7033CD302736BB9400A2FD21 /* FunnyViewController.swift in Sources */,
 				7092BBF22734179500FA84BC /* ViewController.swift in Sources */,
 				7063AA782737BE520038D3D8 /* CollectionPrettyCell.swift in Sources */,
+				7063AA7A2737F4D30038D3D8 /* BaseGameViewModel.swift in Sources */,
+				7063AA7E2737F4F00038D3D8 /* AnchorGroup.swift in Sources */,
 				7033CD262736486100A2FD21 /* PageTitleView.swift in Sources */,
 				7092BBEE2734179500FA84BC /* AppDelegate.swift in Sources */,
 				7033CD282736966500A2FD21 /* PageContentView.swift in Sources */,
@@ -431,6 +442,7 @@
 				7092BBF02734179500FA84BC /* SceneDelegate.swift in Sources */,
 				7033CD2027361B5700A2FD21 /* UIColor-Extension.swift in Sources */,
 				B89BA5FC27352BCD00EDADEF /* RecommendViewController.swift in Sources */,
+				7063AA7C2737F4E30038D3D8 /* AnchorModel.swift in Sources */,
 				B81EACB1273512C2000E57A7 /* HomeViewController.swift in Sources */,
 				B89BA5ED2735147400EDADEF /* LiveViewController.swift in Sources */,
 				B89BA5FA27351F5F00EDADEF /* UIColorExtension.swift in Sources */,

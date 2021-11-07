@@ -41,20 +41,14 @@ class RecommendViewController: UIViewController {
 		collectionView.dataSource = self
 		collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
 		
-		collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: KNormalCellID)
+		//collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: KNormalCellID)
+		//collectionView.register(UICollectionReusableView.classForCoder(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
 		
+		//注册cell
+		collectionView.register(CollectionHeaderView.classForCoder(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
+		collectionView.register(CollectionNormalCell.self, forCellWithReuseIdentifier: KNormalCellID)
+		collectionView.register(CollectionPrettyCell.self, forCellWithReuseIdentifier: kPrettyCellID)
 		
-		/** 注释
-		 register(UICollectionReusableView.classForCoder(),
-				  forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-				  withReuseIdentifier: NSStringFromClass(UICollectionReusableView.classForCoder()))
-		 */
-		//collectionView.register(UICollectionReusableView.classForCoder(), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
-		
-//		collectionView.register(UICollectionReusableView.classForCoder(),
-//				 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-//				 withReuseIdentifier: kHeaderViewID)
-		collectionView.register(UICollectionReusableView.classForCoder(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
 
 		return collectionView
 	}()
@@ -106,11 +100,12 @@ extension RecommendViewController:UICollectionViewDataSource, UICollectionViewDe
 
 extension RecommendViewController: UICollectionViewDelegateFlowLayout {
 	
-	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		
+		if indexPath.section == 1 {
+			return CGSize(width: kNormalItemW, height: kPerttyItemH)
+		}
 		return CGSize(width: kNormalItemW, height: kNormalItemH)
-		
 	}
 	
 }

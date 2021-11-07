@@ -40,14 +40,13 @@ class CollectionHeaderView: UICollectionReusableView {
 		button.layer.cornerRadius = 5.0
 		button.addTarget(self, action: #selector(clickSignButton), for: .touchUpInside)
 		
-		return moreBtn
+		return button
 		
 	}()
 	
 	
 	
 	override init(frame: CGRect) {
-		
 		
 		super.init(frame: frame)
 		initUI()

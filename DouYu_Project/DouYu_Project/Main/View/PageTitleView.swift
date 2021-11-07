@@ -49,6 +49,7 @@ class PageTitleView: UIView {
 		//点击状态栏，回到顶部
 		scrolleView.scrollsToTop = false
 		//设置边界 不超过内容的范围
+		//bounces 弹性效果，默认是TRUE, 如果设置成false，则当你滑动到边缘时将不具有弹性效果
 		scrolleView.bounces = false
 		
 //		scrolleView.contentSize = CGSize(width: 1000, height: 88)

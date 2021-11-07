@@ -39,6 +39,7 @@ class PageContentView: UIView {
 		let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
 		collectionView.showsHorizontalScrollIndicator = false
 		collectionView.isPagingEnabled = true
+		//bounces 弹性效果，默认是TRUE, 如果设置成false，则当你滑动到边缘时将不具有弹性效果
 		collectionView.bounces = false
 		collectionView.dataSource = self
 		collectionView.delegate = self

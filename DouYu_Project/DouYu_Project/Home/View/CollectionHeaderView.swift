@@ -13,6 +13,14 @@ import Kingfisher
 class CollectionHeaderView: UICollectionReusableView {
         
 	
+    var group: AnchorGroup? {
+        didSet {
+            titleLabel.text = group?.tag_name
+            iconImg.image = UIImage(named: group?.icon_name ?? "home_header_normal")
+            
+        }
+    }
+    
 	lazy var titleLabel: UILabel = {
 		
 		let titleLabel = UILabel()

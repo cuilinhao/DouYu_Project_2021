@@ -9,6 +9,27 @@ import UIKit
 
 class CollectionPrettyCell: UICollectionViewCell {
     
+    var anchor : AnchorModel? {
+        didSet {
+            
+            guard let anchor = anchor else { return }
+            
+            if anchor.online >= 1000 {
+                onlineLabel.text = "\(Int(anchor.online / 10000))万在线"
+            } else {
+                onlineLabel.text = "\(anchor.online)在线"
+            }
+            
+            leftLabel.text = anchor.nickname
+            
+            //设置封面图片
+            guard let iconURL = URL(string: anchor.vertical_src) else { return }
+            bgImg.kf.setImage(with: iconURL)
+            
+            cityLabel.text = anchor.anchor_city
+        }
+    }
+    
 	//在线
 	lazy var onlineLabel: UILabel = {
 		
@@ -59,7 +80,7 @@ class CollectionPrettyCell: UICollectionViewCell {
 	override init(frame: CGRect) {
 		
 		super.init(frame: frame)
-		
+		initUI()
 	}
 	
 	func initUI() {

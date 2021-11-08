@@ -10,8 +10,6 @@ import UIKit
 class AnchorGroup: BaseGameModel {
 
 	
-	
-	
 	/// 该组中对应的房间信息
 	var room_list : [[String : NSObject]]? {
 		didSet {

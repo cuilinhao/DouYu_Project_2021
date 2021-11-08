@@ -62,41 +62,69 @@ class RecommendViewController: UIViewController {
 		
 		recommedViewModel.requestData {
 			print("++++++")
+            self.collectionView.reloadData()
 		}
-		
+        
     }
-	
 }
 
 
 extension RecommendViewController:UICollectionViewDataSource, UICollectionViewDelegate {
 	
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
-		return 5
+        return recommedViewModel.anchorGroups.count
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		
-		if section == 0 {
-			return 8
-		}
-		
-		return 4
+//		if section == 0 {
+//			return 8
+//		}
+//
+//		return 4
+        
+        let group = recommedViewModel.anchorGroups[section]
+        
+        return group.anchors.count
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KNormalCellID, for: indexPath)
-		
-		cell.contentView.backgroundColor = UIColor.randomColor()
-		
-		return cell
+		//let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KNormalCellID, for: indexPath)
+		//cell.contentView.backgroundColor = UIColor.randomColor()
+        
+        //取出模型数据
+        let group = recommedViewModel.anchorGroups[indexPath.section]
+        
+        let anchor = group.anchors[indexPath.item]
+        
+        //var cell : UICollectionViewCell!
+        if indexPath.section == 1 {
+            
+          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath) as! CollectionPrettyCell
+            cell.anchor = anchor
+            
+            cell.contentView.backgroundColor = UIColor.randomColor()
+            
+            return cell
+            
+        }else {
+            let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: KNormalCellID, for: indexPath) as! CollectionNormalCell
+            cell.anchor = anchor
+            
+            
+            cell.contentView.backgroundColor = UIColor.randomColor()
+            return cell
+        }
+		//return cell
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 		
-		let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath)
+		let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
 		
+        header.group = recommedViewModel.anchorGroups[indexPath.section]
+        
 		header.backgroundColor = UIColor.systemCyan
 		return header
 	}

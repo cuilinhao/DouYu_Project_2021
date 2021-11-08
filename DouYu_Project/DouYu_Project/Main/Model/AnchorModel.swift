@@ -31,6 +31,9 @@ class AnchorModel: NSObject {
 		setValuesForKeys(dict)
 	}
 
+    override init() {
+        
+    }
 	override func setValue(_ value: Any?, forKey key: String) {
 
 	}

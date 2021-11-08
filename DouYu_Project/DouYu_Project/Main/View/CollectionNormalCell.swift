@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CollectionNormalCell: UICollectionViewCell {
+    
+    
     
 	//背景图片
 	lazy var bgImg: UIImageView = {
@@ -50,10 +53,41 @@ class CollectionNormalCell: UICollectionViewCell {
 		return titleLabel
 	}()
 	
+//    var anchor = AnchorModel() {
+//
+//        didSet {
+//
+//        }
+//    }
+    
+    var anchor : AnchorModel? {
+        
+        didSet {
+            guard let anchor = anchor else { return }
+            if anchor.online >= 1000 {
+                onlineLabel.text = "\(Int(anchor.online / 10000))万在线"
+            } else {
+                onlineLabel.text = "\(anchor.online)在线"
+            }
+            leftLabel.text = anchor.nickname
+            
+            //设置封面图片
+            guard let iconURL = URL(string: anchor.vertical_src) else { return }
+            
+            print("____iconURL:\(iconURL)______src:\(anchor.vertical_src)")
+            //https://pic.netbian.com/uploads/allimg/211103/234237-1635954157f0ce.jpg
+            //codeTest
+            let url = URL(string: "https://pic.netbian.com/uploads/allimg/211103/234237-1635954157f0ce.jpg")
+            bgImg.kf.setImage(with: url)
+        }
+    }
+    
 	override init(frame: CGRect) {
 		
 		super.init(frame: frame)
-		
+	
+        initUI()
+        
 	}
 	
 	func initUI() {
@@ -81,6 +115,11 @@ class CollectionNormalCell: UICollectionViewCell {
 			make.bottom.equalTo(-5)
 		}
 		
+        //codeTest
+        bgImg = UIImageView.init(image: UIImage(named: "aaa"))
+        onlineLabel.text = "werrt"
+        iconImg.image = UIImage(named: "home_header_hot")
+        leftLabel.text = "小马哥教育"
 		
 	}
 	

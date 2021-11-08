@@ -6,13 +6,22 @@
 //
 
 import UIKit
+import Kingfisher
+
 
 class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        let img = UIImageView(frame: CGRect(x: 0, y: 100, width: 100, height: 100))
+        img.backgroundColor = .systemGray
+        
+        view.addSubview(img)
+        
+        let url = URL(string: "https://pic.netbian.com/uploads/allimg/211103/234237-1635954157f0ce.jpg")
+        img.kf.setImage(with: url)
     }
     
 

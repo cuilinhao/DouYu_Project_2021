@@ -9,7 +9,7 @@ import UIKit
 
 
 private let kItemMargin : CGFloat = 10
-private let kHeaderViewH : CGFloat = 50
+private let kHeaderViewH : CGFloat = 50 - 18
 
 
 private let KNormalCellID = "KNormalCellID"
@@ -60,6 +60,7 @@ class RecommendViewController: UIViewController {
         
 		view.addSubview(collectionView)
 		
+		collectionView.backgroundColor = UIColor.systemGray2
 		recommedViewModel.requestData {
 			print("++++++")
             self.collectionView.reloadData()
@@ -76,12 +77,6 @@ extension RecommendViewController:UICollectionViewDataSource, UICollectionViewDe
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		
-//		if section == 0 {
-//			return 8
-//		}
-//
-//		return 4
         
         let group = recommedViewModel.anchorGroups[section]
         
@@ -104,7 +99,7 @@ extension RecommendViewController:UICollectionViewDataSource, UICollectionViewDe
           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath) as! CollectionPrettyCell
             cell.anchor = anchor
             
-            cell.contentView.backgroundColor = UIColor.randomColor()
+            //cell.contentView.backgroundColor = UIColor.randomColor()
             
             return cell
             
@@ -112,8 +107,14 @@ extension RecommendViewController:UICollectionViewDataSource, UICollectionViewDe
             let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: KNormalCellID, for: indexPath) as! CollectionNormalCell
             cell.anchor = anchor
             
-            
-            cell.contentView.backgroundColor = UIColor.randomColor()
+            //cell.contentView.backgroundColor = UIColor.randomColor()
+			
+//			let url = URL(string: "https://pic.netbian.com/uploads/allimg/211103/234237-1635954157f0ce.jpg")
+//			cell.bgImg.kf.setImage(with: url)
+//
+//			cell.bgImg.image = UIImage(named: "aaa")
+//			print("__leftLabel:_22_\(cell.bgImg)")
+			
             return cell
         }
 		//return cell

@@ -79,6 +79,14 @@ class PageTitleView: UIView {
 
 }
 
+//让scrolleView 滑动
+extension PageTitleView {
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		scrolleView.contentSize = CGSize(width: 1000, height: 0)
+	}
+}
+
 extension PageTitleView {
 	
 	func initUI() {

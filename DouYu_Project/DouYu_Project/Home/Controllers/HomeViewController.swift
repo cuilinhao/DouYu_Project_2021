@@ -84,7 +84,7 @@ extension HomeViewController {
 		navigationItem.rightBarButtonItems = [historyItem, searchItem, qrcodeItem]
 		
 		//有作用
-		navigationController?.navigationBar.backgroundColor = UIColor.lightGray
+		navigationController?.navigationBar.backgroundColor = UIColor.white
 		//navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 200)
 		//self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 200)
 		

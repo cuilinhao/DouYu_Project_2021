@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GameCellID" id="7jc-3u-FaX" customClass="CollectionGameCell">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="97"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PGz-Xd-TAl" customClass="CollectionGameCell">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="97"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aSr-rK-OK8">
+                        <rect key="frame" x="10" y="8" width="54" height="56"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="56" id="r8U-gX-apm"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lZ-gW-QZB">
+                        <rect key="frame" x="20.5" y="72" width="33" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="zI3-ef-Qg2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" systemColor="systemOrangeColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="aSr-rK-OK8" firstAttribute="leading" secondItem="PGz-Xd-TAl" secondAttribute="leading" constant="10" id="B8c-PK-pZv"/>
+                    <constraint firstItem="3lZ-gW-QZB" firstAttribute="centerX" secondItem="aSr-rK-OK8" secondAttribute="centerX" id="e63-hm-B58"/>
+                    <constraint firstItem="aSr-rK-OK8" firstAttribute="top" secondItem="PGz-Xd-TAl" secondAttribute="top" constant="8" id="fZr-mf-FSo"/>
+                    <constraint firstAttribute="trailing" secondItem="aSr-rK-OK8" secondAttribute="trailing" constant="16" id="pkr-nG-obn"/>
+                    <constraint firstAttribute="bottom" secondItem="3lZ-gW-QZB" secondAttribute="bottom" constant="4" id="yS8-SR-bS4"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="80" height="97"/>
+            <point key="canvasLocation" x="-79.710144927536234" y="-110.82589285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

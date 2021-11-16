@@ -90,7 +90,7 @@ class RecommendViewController: UIViewController {
         
 		collectionView.addSubview(recommendView)
         
-        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH, left: 0, bottom: 0, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH + 30+30+20, left: 0, bottom: 0, right: 0)
         
 		collectionView.backgroundColor = UIColor.systemGray2
 		recommedViewModel.requestData {

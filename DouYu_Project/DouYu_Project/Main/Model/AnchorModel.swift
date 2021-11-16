@@ -25,6 +25,10 @@ class AnchorModel: NSObject {
 	/// 所在城市
     @objc var anchor_city : String = ""
 	
+	
+	@objc var avatar_small : String = ""
+	
+	
 	  init(dict: [String : Any]) {
 		super.init()
           

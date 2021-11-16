@@ -15,7 +15,7 @@ class BaseGameModel: NSObject {
 	
 	// MARK:- 自定义构造函数
 	override init() {
-		
+
 	}
 	
 	init(dict : [String : Any]) {
@@ -27,7 +27,7 @@ class BaseGameModel: NSObject {
     override func setValue(_ value: Any?, forKey key: String) {
         
         super.setValue(value, forKey: key)
-        print(" test no key:\(key)")
+        print(" test  key:\(key)")
     }
     
     override  func setValue(_ value: Any?, forUndefinedKey key: String) {

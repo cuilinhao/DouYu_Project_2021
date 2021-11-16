@@ -182,6 +182,10 @@ extension RecommendViewModel {
         }
         
     }
+	
+//	func requestRecommendGame(<#parameters#>) -> <#return type#> {
+//
+//	}
     
    
     

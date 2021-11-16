@@ -40,6 +40,19 @@ class RecommendViewController: UIViewController {
         return cycleView
     }()
     
+	//推荐view
+	lazy var recommendView : RecommendGameView = {
+		
+		let recommendView = RecommendGameView.recommendGameView()
+		recommendView.frame = CGRect(x: 0, y: -kGameViewH, width: kScreenW, height: kGameViewH)
+		
+		//codeTest
+		recommendView.backgroundColor = .systemCyan
+		
+		return recommendView
+	}()
+	
+	
     
 	lazy var collectionView: UICollectionView = {
 		
@@ -66,7 +79,7 @@ class RecommendViewController: UIViewController {
 		return collectionView
 	}()
 	
-	
+	//MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,6 +88,7 @@ class RecommendViewController: UIViewController {
         //cycleview 添加到collectionView
         collectionView.addSubview(cycleView)
         
+		collectionView.addSubview(recommendView)
         
         collectionView.contentInset = UIEdgeInsets(top: kCycleViewH, left: 0, bottom: 0, right: 0)
         
@@ -88,6 +102,8 @@ class RecommendViewController: UIViewController {
             self.cycleView.cycleModels = self.recommedViewModel.cycleModes
             
         }
+		
+		
         
     }
 }

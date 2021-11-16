@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GameCellID" id="7jc-3u-FaX" customClass="CollectionGameCell">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="7jc-3u-FaX" customClass="CollectionGameCell" customModule="DouYu_Project" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="80" height="97"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PGz-Xd-TAl" customClass="CollectionGameCell">
@@ -42,6 +42,10 @@
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="80" height="97"/>
+            <connections>
+                <outlet property="iconImagView" destination="aSr-rK-OK8" id="Ubu-l3-tGU"/>
+                <outlet property="titleLab" destination="3lZ-gW-QZB" id="WGI-Ll-t90"/>
+            </connections>
             <point key="canvasLocation" x="-79.710144927536234" y="-110.82589285714285"/>
         </collectionViewCell>
     </objects>

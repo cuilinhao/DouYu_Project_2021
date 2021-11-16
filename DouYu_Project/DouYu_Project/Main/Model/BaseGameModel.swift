@@ -10,8 +10,8 @@ import UIKit
 class BaseGameModel: NSObject {
 
 	// MARK:- 定义属性
-	var tag_name : String = ""
-	var icon_url : String = ""
+	@objc var tag_name : String = ""
+    @objc var icon_url : String = ""
 	
 	// MARK:- 自定义构造函数
 	override init() {
@@ -24,6 +24,16 @@ class BaseGameModel: NSObject {
 		setValuesForKeys(dict)
 	}
 	
-	override func setValue(_ value: Any?, forUndefinedKey key: String) {}
+    override func setValue(_ value: Any?, forKey key: String) {
+        
+        super.setValue(value, forKey: key)
+        print(" test no key:\(key)")
+    }
+    
+    override  func setValue(_ value: Any?, forUndefinedKey key: String) {
+        print("no key:\(key)")
+    }
+    
+	//override func setValue(_ value: Any?, forUndefinedKey key: String) {}
 	
 }

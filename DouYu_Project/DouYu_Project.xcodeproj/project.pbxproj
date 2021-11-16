@@ -34,6 +34,12 @@
 		7092BBF52734179500FA84BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7092BBF32734179500FA84BC /* Main.storyboard */; };
 		7092BBF72734179800FA84BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7092BBF62734179800FA84BC /* Assets.xcassets */; };
 		7092BBFA2734179800FA84BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7092BBF82734179800FA84BC /* LaunchScreen.storyboard */; };
+		B8125E02273B9C710042AEE1 /* RecommendCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8125E01273B9C710042AEE1 /* RecommendCycleView.swift */; };
+		B8125E04273BA3BA0042AEE1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8125E03273BA3BA0042AEE1 /* Constants.swift */; };
+		B8125E08273BCEB00042AEE1 /* RecommendGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8125E07273BCEB00042AEE1 /* RecommendGameView.swift */; };
+		B8125E0A273BCEC80042AEE1 /* RecommendGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8125E09273BCEC80042AEE1 /* RecommendGameView.xib */; };
+		B8125E0C273BD0200042AEE1 /* CollectionGameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8125E0B273BD0200042AEE1 /* CollectionGameCell.xib */; };
+		B8125E0E273BD0270042AEE1 /* CollectionGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8125E0D273BD0270042AEE1 /* CollectionGameCell.swift */; };
 		B81EACB1273512C2000E57A7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81EACB0273512C2000E57A7 /* HomeViewController.swift */; };
 		B81EACB3273512EC000E57A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81EACB2273512EC000E57A7 /* MainViewController.swift */; };
 		B89979112738B30E00177DE9 /* TestAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89979102738B30E00177DE9 /* TestAlamofire.swift */; };
@@ -75,6 +81,12 @@
 		7092BBFB2734179800FA84BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73176C8A922BAB1311E74978 /* Pods-DouYu_Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYu_Project.debug.xcconfig"; path = "Target Support Files/Pods-DouYu_Project/Pods-DouYu_Project.debug.xcconfig"; sourceTree = "<group>"; };
 		AF4878BA0B05ECD6F4338FEC /* Pods-DouYu_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYu_Project.release.xcconfig"; path = "Target Support Files/Pods-DouYu_Project/Pods-DouYu_Project.release.xcconfig"; sourceTree = "<group>"; };
+		B8125E01273B9C710042AEE1 /* RecommendCycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCycleView.swift; sourceTree = "<group>"; };
+		B8125E03273BA3BA0042AEE1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B8125E07273BCEB00042AEE1 /* RecommendGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendGameView.swift; sourceTree = "<group>"; };
+		B8125E09273BCEC80042AEE1 /* RecommendGameView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendGameView.xib; sourceTree = "<group>"; };
+		B8125E0B273BD0200042AEE1 /* CollectionGameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionGameCell.xib; sourceTree = "<group>"; };
+		B8125E0D273BD0270042AEE1 /* CollectionGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionGameCell.swift; sourceTree = "<group>"; };
 		B81EACB0273512C2000E57A7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B81EACB2273512EC000E57A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B89979102738B30E00177DE9 /* TestAlamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAlamofire.swift; sourceTree = "<group>"; };
@@ -224,6 +236,11 @@
 			isa = PBXGroup;
 			children = (
 				7063AA732737BE190038D3D8 /* CollectionHeaderView.swift */,
+				B8125E01273B9C710042AEE1 /* RecommendCycleView.swift */,
+				B8125E07273BCEB00042AEE1 /* RecommendGameView.swift */,
+				B8125E09273BCEC80042AEE1 /* RecommendGameView.xib */,
+				B8125E0D273BD0270042AEE1 /* CollectionGameCell.swift */,
+				B8125E0B273BD0200042AEE1 /* CollectionGameCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				B89979102738B30E00177DE9 /* TestAlamofire.swift */,
+				B8125E03273BA3BA0042AEE1 /* Constants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -397,6 +415,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7092BBFA2734179800FA84BC /* LaunchScreen.storyboard in Resources */,
+				B8125E0A273BCEC80042AEE1 /* RecommendGameView.xib in Resources */,
+				B8125E0C273BD0200042AEE1 /* CollectionGameCell.xib in Resources */,
 				7092BBF72734179800FA84BC /* Assets.xcassets in Resources */,
 				7092BBF52734179500FA84BC /* Main.storyboard in Resources */,
 			);
@@ -452,7 +472,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B89BA5F42735185300EDADEF /* Common.swift in Sources */,
+				B8125E08273BCEB00042AEE1 /* RecommendGameView.swift in Sources */,
 				7063AA8A273807400038D3D8 /* Date.swift in Sources */,
+				B8125E0E273BD0270042AEE1 /* CollectionGameCell.swift in Sources */,
 				7063AA762737BE410038D3D8 /* CollectionNormalCell.swift in Sources */,
 				7063AA742737BE1A0038D3D8 /* CollectionHeaderView.swift in Sources */,
 				7063AA842737F69F0038D3D8 /* CycleModel.swift in Sources */,
@@ -474,7 +496,9 @@
 				7063AA882737FB970038D3D8 /* NetworkTools.swift in Sources */,
 				7033CD2027361B5700A2FD21 /* UIColor-Extension.swift in Sources */,
 				B89BA5FC27352BCD00EDADEF /* RecommendViewController.swift in Sources */,
+				B8125E04273BA3BA0042AEE1 /* Constants.swift in Sources */,
 				7063AA7C2737F4E30038D3D8 /* AnchorModel.swift in Sources */,
+				B8125E02273B9C710042AEE1 /* RecommendCycleView.swift in Sources */,
 				B81EACB1273512C2000E57A7 /* HomeViewController.swift in Sources */,
 				B89BA5ED2735147400EDADEF /* LiveViewController.swift in Sources */,
 				B89BA5FA27351F5F00EDADEF /* UIColorExtension.swift in Sources */,

@@ -9,7 +9,7 @@ import UIKit
 
 
 private let kItemMargin : CGFloat = 10
-private let kHeaderViewH : CGFloat = 50
+private let kHeaderViewH : CGFloat = 50 - 18
 
 
 private let KNormalCellID = "KNormalCellID"
@@ -20,11 +20,27 @@ private let kNormalItemW = (kScreenW - 3 * kItemMargin) / 2
 private let kNormalItemH = kNormalItemW * 3 / 4
 private let kPerttyItemH = kNormalItemW * 4 / 3
 
+private let kCycleViewH: CGFloat = kScreenW * 3 / 8 + 100
+private let kGameViewH: CGFloat = 90
+
 
 class RecommendViewController: UIViewController {
 
 	lazy var recommedViewModel = RecommendViewModel()
 	
+    //顶部轮播
+    lazy var cycleView: RecommendCycleView = {
+       
+        let cycleView = RecommendCycleView()
+        cycleView.frame = CGRect(x: 0, y: -(kCycleViewH + kGameViewH), width: kScreenW, height: kCycleViewH)
+        
+        //codeTest
+        cycleView.backgroundColor = UIColor.systemPink
+        
+        return cycleView
+    }()
+    
+    
 	lazy var collectionView: UICollectionView = {
 		
 		let layout = UICollectionViewFlowLayout()
@@ -42,15 +58,11 @@ class RecommendViewController: UIViewController {
 		collectionView.dataSource = self
 		collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
 		
-		//collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: KNormalCellID)
-		//collectionView.register(UICollectionReusableView.classForCoder(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
-		
 		//注册cell
 		collectionView.register(CollectionHeaderView.classForCoder(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
 		collectionView.register(CollectionNormalCell.self, forCellWithReuseIdentifier: KNormalCellID)
 		collectionView.register(CollectionPrettyCell.self, forCellWithReuseIdentifier: kPrettyCellID)
 		
-
 		return collectionView
 	}()
 	
@@ -59,11 +71,23 @@ class RecommendViewController: UIViewController {
         super.viewDidLoad()
         
 		view.addSubview(collectionView)
-		
+        
+        //cycleview 添加到collectionView
+        collectionView.addSubview(cycleView)
+        
+        
+        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH, left: 0, bottom: 0, right: 0)
+        
+		collectionView.backgroundColor = UIColor.systemGray2
 		recommedViewModel.requestData {
 			print("++++++")
             self.collectionView.reloadData()
 		}
+        
+        recommedViewModel.requestCycleData {
+            self.cycleView.cycleModels = self.recommedViewModel.cycleModes
+            
+        }
         
     }
 }
@@ -76,12 +100,6 @@ extension RecommendViewController:UICollectionViewDataSource, UICollectionViewDe
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		
-//		if section == 0 {
-//			return 8
-//		}
-//
-//		return 4
         
         let group = recommedViewModel.anchorGroups[section]
         
@@ -104,7 +122,7 @@ extension RecommendViewController:UICollectionViewDataSource, UICollectionViewDe
           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath) as! CollectionPrettyCell
             cell.anchor = anchor
             
-            cell.contentView.backgroundColor = UIColor.randomColor()
+            //cell.contentView.backgroundColor = UIColor.randomColor()
             
             return cell
             
@@ -112,8 +130,14 @@ extension RecommendViewController:UICollectionViewDataSource, UICollectionViewDe
             let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: KNormalCellID, for: indexPath) as! CollectionNormalCell
             cell.anchor = anchor
             
-            
-            cell.contentView.backgroundColor = UIColor.randomColor()
+            //cell.contentView.backgroundColor = UIColor.randomColor()
+			
+//			let url = URL(string: "https://pic.netbian.com/uploads/allimg/211103/234237-1635954157f0ce.jpg")
+//			cell.bgImg.kf.setImage(with: url)
+//
+//			cell.bgImg.image = UIImage(named: "aaa")
+//			print("__leftLabel:_22_\(cell.bgImg)")
+			
             return cell
         }
 		//return cell

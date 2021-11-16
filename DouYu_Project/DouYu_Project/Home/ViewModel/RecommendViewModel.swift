@@ -65,6 +65,8 @@ extension RecommendViewModel {
 		print("_____\(Date.getCurrentTime())")
 		//1636292154
         
+        //// 3.请求第一部分推荐数据
+        ///http://capi.douyucdn.cn/api/v1/getbigDataRoom?time=1636513013
 		NetworkTools.requestGETData(.get, UrlString: "http://capi.douyucdn.cn/api/v1/getbigDataRoom", parameters: ["time" : Date.getCurrentTime()]) { (result) in
 			
 			// 1.将result转成字典类型
@@ -83,6 +85,12 @@ extension RecommendViewModel {
 			for dict in dataArray {
 				
 				let anchor = AnchorModel(dict: dict)
+                //anchor.online = 222
+                //anchor.nickname = "aaa"
+                //anchor.vertical_src = "ere"
+                
+                print("___>>>_01_\(anchor.online)_____\(anchor.nickname)_____\(anchor.vertical_src)")
+                
 				self.bigDataGroup.anchors.append(anchor)
 			}
             
@@ -90,7 +98,7 @@ extension RecommendViewModel {
 			dGroup.leave()
 		}
         
-        //颜值数据
+        // 4.请求第二部分颜值数据
         dGroup.enter()
         NetworkTools.requestGETData(.get, UrlString: "http://capi.douyucdn.cn/api/v1/getVerticalRoom", parameters: parameters) { result in
             
@@ -104,6 +112,9 @@ extension RecommendViewModel {
             
             for dict in dataArray {
                 let anchor = AnchorModel(dict: dict)
+                
+                print("___>>>_02_\(anchor.online)_____\(anchor.nickname)_____\(anchor.vertical_src)")
+                
                 self.prettyGroup.anchors.append(anchor)
             }
             
@@ -111,8 +122,7 @@ extension RecommendViewModel {
             dGroup.leave()
         }
         
-        //2- 12 部分游戏数据
-        
+        // 5.请求2-12部分游戏数据
         dGroup.enter()
         NetworkTools.requestGETData(.get, UrlString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parameters) { result in
             
@@ -122,6 +132,9 @@ extension RecommendViewModel {
             
             for dict in dataArray {
                 let group = AnchorGroup(dict: dict)
+                
+                //print("___>>>__\(group.online)_____\(group.nickname)_____\(group.vertical_src)")
+                
                 self.anchorGroups.append(group)
             }
             
@@ -151,8 +164,19 @@ extension RecommendViewModel {
             
             //字典转模型
             for dict  in dataArray  {
-                self.cycleModes.append(CycleModel(dict: dict))
+                
+                
+                
+                //self.cycleModes.append(CycleModel(dict: dict))
+                
+                //codeTest
+                let model = CycleModel(dict: dict)
+                print("__title:___\(model.title)")
+                self.cycleModes.append(model)
+                
             }
+            
+            print("___modelCount_vm:\(self.cycleModes.count)")
             
             finishCallBack()
         }

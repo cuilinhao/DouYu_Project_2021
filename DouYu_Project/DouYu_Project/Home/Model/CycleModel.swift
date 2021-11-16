@@ -9,11 +9,11 @@ import UIKit
 
 class CycleModel: NSObject {
 
-	var title : String = ""
+	@objc var title : String = ""
 	
-	var pic_url : String = ""
+    @objc var pic_url : String = ""
 	
-	var room: [String : NSObject]? {
+    @objc var room: [String : NSObject]? {
 		
 		didSet {
 			
@@ -30,6 +30,10 @@ class CycleModel: NSObject {
 		super.init()
 		setValuesForKeys(dict)
 	}
+    
+    override func setValue(_ value: Any?, forKey key: String) {
+        super.setValue(value, forKey: key)
+    }
 	
 	override func setValue(_ value: Any?, forUndefinedKey key: String) {
 		

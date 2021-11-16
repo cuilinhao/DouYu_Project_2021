@@ -14,11 +14,14 @@ class CollectionNormalCell: UICollectionViewCell {
     
 	//背景图片
 	lazy var bgImg: UIImageView = {
-		let iconImg = UIImageView()
-		iconImg.contentMode = .scaleAspectFit
+		let bgImg = UIImageView()
+		bgImg.contentMode = .scaleAspectFill
 		//Img_default
-		iconImg.image = UIImage(named: "aaa")
-		return iconImg
+		bgImg.image = UIImage(named:"aaa")
+        bgImg.layer.cornerRadius = 4.0
+        bgImg.layer.masksToBounds = true
+        
+		return bgImg
 	}()
 	
 
@@ -26,7 +29,7 @@ class CollectionNormalCell: UICollectionViewCell {
 	lazy var onlineLabel: UILabel = {
 		
 		let titleLabel = UILabel()
-		titleLabel.font = .systemFont(ofSize: 15)
+		titleLabel.font = .systemFont(ofSize: 12)
 		titleLabel.textAlignment = .center
 		titleLabel.textColor = UIColor.purple
 		titleLabel.text = "6666在线"
@@ -45,21 +48,15 @@ class CollectionNormalCell: UICollectionViewCell {
     //左侧文字
 	lazy var leftLabel: UILabel = {
 		
-		let titleLabel = UILabel()
-		titleLabel.font = .systemFont(ofSize: 15)
-		titleLabel.textAlignment = .center
-		titleLabel.textColor = UIColor.purple
-		titleLabel.text = "小马哥在线教育"
-		return titleLabel
+		let leftLabel = UILabel()
+		leftLabel.font = .systemFont(ofSize: 12)
+		leftLabel.textAlignment = .center
+		leftLabel.textColor = UIColor.white
+		leftLabel.backgroundColor = UIColor.clear
+		leftLabel.text = "小马哥在线教育"
+		return leftLabel
 	}()
 	
-//    var anchor = AnchorModel() {
-//
-//        didSet {
-//
-//        }
-//    }
-    
     var anchor : AnchorModel? {
         
         didSet {
@@ -70,15 +67,13 @@ class CollectionNormalCell: UICollectionViewCell {
                 onlineLabel.text = "\(anchor.online)在线"
             }
             leftLabel.text = anchor.nickname
+            iconImg.image = UIImage(named: "home_header_hot")
             
             //设置封面图片
             guard let iconURL = URL(string: anchor.vertical_src) else { return }
+            bgImg.kf.setImage(with: iconURL)
             
             print("____iconURL:\(iconURL)______src:\(anchor.vertical_src)")
-            //https://pic.netbian.com/uploads/allimg/211103/234237-1635954157f0ce.jpg
-            //codeTest
-            let url = URL(string: "https://pic.netbian.com/uploads/allimg/211103/234237-1635954157f0ce.jpg")
-            bgImg.kf.setImage(with: url)
         }
     }
     
@@ -87,19 +82,20 @@ class CollectionNormalCell: UICollectionViewCell {
 		super.init(frame: frame)
 	
         initUI()
-        
+		self.contentView.layer.masksToBounds = true
 	}
 	
 	func initUI() {
-		addSubview(bgImg)
+        
+		self.contentView.addSubview(bgImg)
 		bgImg.addSubview(onlineLabel)
-		addSubview(iconImg)
-		addSubview(leftLabel)
-		
+		self.contentView.addSubview(iconImg)
+		self.contentView.addSubview(leftLabel)
+	
 		bgImg.snp.makeConstraints { make in
-			make.left.top.right.equalTo(0)
-			make.height.equalTo(153)
+			make.edges.equalTo(UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0))
 		}
+		
 		onlineLabel.snp.makeConstraints { make in
 			make.right.equalTo(0)
 			make.bottom.equalTo(-5)
@@ -107,19 +103,39 @@ class CollectionNormalCell: UICollectionViewCell {
 		
 		iconImg.snp.makeConstraints { make in
 			make.left.equalTo(0)
-			make.bottom.equalTo(-5)
-			make.size.equalTo(CGSize(width: 5, height: 5))
+			make.bottom.equalTo(-2)
+			make.size.equalTo(CGSize(width: 15, height: 15))
 		}
 		leftLabel.snp.makeConstraints { make in
 			make.left.equalTo(iconImg.snp_rightMargin).offset(5)
-			make.bottom.equalTo(-5)
+			make.bottom.equalTo(-1)
+			make.size.equalTo(CGSize(width: 100, height: 15))
 		}
 		
-        //codeTest
-        bgImg = UIImageView.init(image: UIImage(named: "aaa"))
-        onlineLabel.text = "werrt"
-        iconImg.image = UIImage(named: "home_header_hot")
-        leftLabel.text = "小马哥教育"
+	}
+	
+	
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		
+		//bgImg = UIImageView.init(image: UIImage(named: "aaa"))
+//		onlineLabel.text = "werrt"
+//		iconImg.image = UIImage(named: "home_header_hot")
+//		leftLabel.text = "小马哥教育"
+//
+//		let url = URL(string: "https://pic.netbian.com/uploads/allimg/211103/234237-1635954157f0ce.jpg")
+//		bgImg.kf.setImage(with: url)
+//
+//
+//		//bgImg.image = UIImage(named: "bbb")
+//
+//		//codeTest
+//		leftLabel.text = "小马哥斗鱼直播"
+//		//leftLabel.backgroundColor = UIColor.systemCyan
+//		//leftLabel.textColor = UIColor.white
+//		onlineLabel.text = "66666在线"
+		
+		
 		
 	}
 	
